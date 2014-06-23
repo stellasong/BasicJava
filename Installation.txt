@@ -1,0 +1,23 @@
+http://www.statmethods.net/advstats/timeseries.html
+
+http://cran.r-project.org/web/packages/forecast/forecast.pdf
+
+http://stackoverflow.com/questions/10302261/forecasting-time-series-data
+
+1. install R-3.0.2
+2. install rJava through R - packages - rJava
+ - install forecast through R - download packages - packages - install packages from local zip files
+3. install rJava Eclipse plugin - download .jar file, move into the plugins directory of eclipse. ([Eclipse Home]/plugins/)
+4. Restart Eclipse
+5. Click on Eclipse->Preferences->RJava. Select the four directory paths using the browse button.
+ - Path to JRI DLL Dir: C:/Program Files/R/R-3.0.2/library/rJava/jri/x64
+ - Path to JRI JARS: C:/Program Files/R/R-3.0.2/library/rJava/jri
+ - Path to R DLL Dir: C:/Program Files/R/R-3.0.2/bin/x64
+ - Path to JVM DLL Dir: C:/Program Files/Java/jre7/bin/server
+ - in control panel - advanced system settings - environment variables - system variables - add c:/Program Files/R/R-3.0.2/library/rJava/jri
+6. Create new Java project
+7. right click - Build Path - Add Libraries - User Library - next
+8. select 'JRI_DIR' - finish
+
+9. copy rtest2.java from jri/examples/ into project
+10. Run Configuration - run
