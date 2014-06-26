@@ -17,7 +17,9 @@ for(i in 1:length(group)){
   timeSeries <- ts(eachItem$Sold, frequency = 12)
   #predictedValue <- forecast(tslm(timeSeries ~ trend + season), h=1);
   predictedValue <- forecast(ets(timeSeries), 1);
-  write.table(predictedValue, rDataPath, append=TRUE, row.names = FALSE, col.names = FALSE);
+  #write.table(predictedValue, rDataPath, append=TRUE, row.names = FALSE, col.names = FALSE);
+  #this only writes the ID and the upper 80 to the file
+  write.table(cbind(group[[1]]$ID[1], predictedValue$upper[,1]), rDataPath, append=TRUE, row.names = FALSE, col.names = FALSE);
 }
 
 
@@ -35,4 +37,4 @@ for(i in 1:length(group)){
 #predictedValue <- forecast(arima(timeSeries), h=1)
 
 #plot(predictedValue)
-#write.table(predictedValue, "rdata.txt", sep=";")
+#write.table(cpredictedValue, "rdata.txt", sep=";")
